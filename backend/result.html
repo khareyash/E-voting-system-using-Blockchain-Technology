@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <h1 id="instructor"> </h1>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+        <script>
+    
+            if (typeof web3 !== 'undefined') {
+                web3 = new Web3(web3.currentProvider);
+            } else {
+                // set the provider you want from Web3.providers
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    
+            }
+            var bjp=0;
+            var congress=0;
+            web3.eth.defaultAccount = web3.eth.accounts[1];
+            var CoursetroContract = web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getInstructor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "uint256"
+			}
+		],
+		"name": "setInstructor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]);
+    var Coursetro = CoursetroContract.at('0x22D0b2b84cBD95462123627376630BA682b8b734');
+            console.log(Coursetro);
+            Coursetro.getInstructor(function(error, result){
+                if(!error)
+                    {
+    
+                        $("#instructor").html("bjp:" +result[0]+'<br>'+"congress:"+result[1]);
+                        console.log(result);
+                    
+                    }
+                else
+                    console.error(error);
+            });
+        </script>
+    
+</body>
+</html>
