@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Century Gothic ;
+
+}
+header
+{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../1.jpg);
+    height:100vh;
+    background-size:contain ;
+    background-position: center;
+
+}
+ul
+{
+    float:right;
+    list-style-type: none;
+    margin-top:25px;
+
+}
+ul li{
+    display: inline-block;
+    margin-right: 10px; 
+
+}
+ul li a
+{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    border: 2px solid white;
+    transition:0.6s ease;
+    font-size:30px;
+
+
+
+}
+
+ul li a:hover{
+    background-color: white;
+    color:black;
+
+
+
+}
+.welcome
+{
+    position: absolute ;
+    top:40%;
+    left:52%;
+    right:5%;
+    color:white;
+    font-size: 30px;
+    transform:translate(-50%,-50%);
+}
+.main
+{
+    max-width:1200px;
+    margin:auto;
+    margin-right: 20px;
+}
+
+
