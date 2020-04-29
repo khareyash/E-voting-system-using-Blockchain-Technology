@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Login</title>
+    <script language='Javascript'>
+        function verify()
+        {
+            if(document.admin.user.value=="test123" && document.admin.pass.value=="abc123")
+            {
+                console.log(ok);
+                location.href="C:/Users/somil/corsetro/result.html";
+            }
+            else
+            {
+                alert("please enter correct username and password");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1> Admin Username: </h1> <br>
+    
+<form name="admin">
+    Enter Username: <input name="user" type="text"/><br><br>
+    Enter Password: <input name="pass" type ="password"/><br><br>
+    <input type="submit" value="login" onClick="verify()">
+</form>
+</body>
+</html>
